@@ -1,0 +1,5 @@
+メッツ参考元
+https://e-kennet.mhlw.go.jp/wp/wp-content/themes/targis_mhlw/pdf/mets.pdf
+
+消費エネルギー量は、強度（メッツ）×体重×時間（h）×1.05の式から得られた値
+https://www.mhlw.go.jp/shingi/2006/07/dl/s0719-3c.pdf

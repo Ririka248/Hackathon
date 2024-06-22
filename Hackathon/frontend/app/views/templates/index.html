@@ -1,0 +1,13 @@
+{{define "content" }}
+UserName:{{.Name}}
+<h1>Sample App</h1>
+<p>[<a href="/mypage/new">Create</a>]</p>
+<hr>
+ 
+{{range .Heights }}
+<div>{{ .Heightvalue }}</div>
+<p>[<a href="/mypage/edit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/mypage/delete/{{.ID}}">Delete</a>]</p>
+<hr>
+{{end}}
+{{end}}
