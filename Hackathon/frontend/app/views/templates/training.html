@@ -1,0 +1,139 @@
+{{define "content" }}
+<div class="position">
+    <!----- main -----> 
+    <article id="main">
+        <div class="today_score">
+            <div class="title husen_m">本日の運動</div>
+            <div class="contents">
+                <div class="topics">総消費カロリー</div>
+                <div class="value">
+                    <div id="burncal_all">500 kcal</div>
+                </div>
+                <div class="topics">種目1</div>
+                <div class="value">
+                    <div id="training_1">スクワット</div>
+                </div>
+                <div class="topics">種目2</div>
+                <div class="value">
+                    <div id="training_2">ウォーキング</div>
+                </div>
+                <div class="topics">種目3</div>
+                <div class="value">
+                    <div id="training_3">腕立て伏せ</div>
+                </div>
+            </div>
+        </div>
+        <div class="today_score">
+            <div class="title husen_m">運動内容の記入</div>
+            <div class="contents">
+                <div class="topics">種目1</div>
+                <div class="value">
+                    <span>種目名:<span>
+                        <select name="genre" id="genre">
+                        {{range .Sports }}
+                            <option value={{ .Name }}>{{ .Name }}</option>
+                        {{end}}
+                        </select>
+                    <span>  <span>
+                    </br>
+                    <span>強度:<span>
+                    <input type="number" id="training_weight_1" value="">
+                    <span>kg<span>
+                    </br>
+                    <span>時間:<span>
+                    <input type="number" id="training_time_1" value="">
+                    <span>分<span>
+                </div>
+                <div class="topics">種目2</div>
+                <div class="value">
+                    <span>種目名:<span>
+                    <input type="text" id="training_menu_2" value="">
+                    <span>  <span>
+                    </br>
+                    <span>強度:<span>
+                    <input type="number" id="training_weight_2" value="">
+                    <span>kg<span>
+                    </br>
+                    <span>時間:<span>
+                    <input type="number" id="training_time_2" value="">
+                    <span>分<span>
+                </div>
+                <div class="topics">種目3</div>
+                <div class="value">
+                    <span>種目名:<span>
+                    <input type="text" id="training_menu_3" value="">
+                    </br>
+                    <span>強度:<span>
+                    <input type="number" id="training_weight_3" value="">
+                    <span>kg<span>
+                    </br>
+                    <span>時間:<span>
+                    <input type="number" id="training_time_3" value="">
+                    <span>分<span>
+                </div>
+                <input id="button1" type="button" value="記入内容を確定" onclick="sleep_calculate()">
+            </div>
+        </div>
+        <div class="main_details">
+            <div class="main_details_left">
+                <div class="title husen_m">昨日の運動</div>
+                <div class="contents">
+                    <div class="topics">総消費カロリー</div>
+                    <div class="value">
+                        <div id="burncal_all_yd">300kcal</div>
+                    </div>
+                    <div class="topics">種目1</div>
+                    <div class="value">
+                        <div id="training_1_yd">スクワット</div>
+                    </div>
+                    <div class="topics">種目2</div>
+                    <div class="value">
+                        <div id="training_2_yd">腹筋</div>
+                    </div>
+                    <div class="topics">種目3</div>
+                    <div class="value">
+                        <div id="training_3_yd">なし</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_details_right">
+                <div class="title husen_m">獲得可能アイテム</div>
+                <div class="contents">
+                    <div class="topics">鉱石</div>
+                    <div class="value">
+                        <div class="item_details">武器強化に利用可能</div>
+                    </div>
+                    <div class="topics">剣</div>
+                    <div class="value">
+                        <div class="item_details">相手に5ダメージ</div>
+                    </div>
+                    <div class="topics">薬草</div>
+                    <div class="value">
+                        <div class="item_details">体力を20回復</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!----- /main ----->
+
+    <!----- aside ----->
+    <aside id="aside">
+        <div class="aside_topic">
+            <div class="aside_title"><div class="aside_initial">M E N U</div></div>
+            <div class="clip_over_background"><div class="clip_over"></div></div>
+            <div class="clip_under_background"><div class="clip_under"></div></div>
+            <div class="aside_lists">
+                <li class="husen_s"><a href="/mypage" class="aside_item">トップ</a></li>
+                <li class="husen_s"><a href="/mypage/sleep" class="aside_item">睡眠管理</a></li>
+                <li class="husen_s"><a href="/mypage/training" class="aside_item">運動管理</a></li>
+                <li class="husen_s"><a href="/mypage/calendar" class="aside_item">カレンダー</a></li>
+                <li class="husen_s"><a href="/mypage/item" class="aside_item">アイテム一覧</a></li>
+                <li class="husen_s"><a href="/mypage/setting" class="aside_item">設定</a></li>
+                <li class="husen_s"><a href="/logout" class="aside_item">ログアウト</a></li>
+            </div>
+        </div>
+    </aside>
+<!----- /aside ----->
+</div>
+{{end}}

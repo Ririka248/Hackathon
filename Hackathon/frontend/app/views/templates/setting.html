@@ -1,0 +1,25 @@
+{{define "content" }}
+UserName:{{.Name}}
+<h1>設定</h1>
+
+<hr>
+<h2>身長</h2>
+<p>[<a href="/mypage/heightnew">Create</a>]</p>
+
+{{range .Heights }}
+<div><p>{{ .Date}}</p><p>{{ .Heightvalue }}</p></div>
+<p>[<a href="/mypage/heightedit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/mypage/heightdelete/{{.ID}}">Delete</a>]</p>
+{{end}}
+<hr>
+
+<h2>体重</h2>
+<p>[<a href="/mypage/weightnew">Create</a>]</p>
+
+{{range .Weights }}
+<div><p>{{ .Date}}</p><p>{{ .Weightvalue }}</p></div>
+<p>[<a href="/mypage/weightedit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/mypage/weightdelete/{{.ID}}">Delete</a>]</p>
+{{end}}
+<hr>
+{{end}}

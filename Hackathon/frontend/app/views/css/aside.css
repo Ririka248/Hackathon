@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c');
+
+#aside {
+    margin-right: 20px;
+}
+
+.aside_title {
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: #3e434f;
+    margin-top: 30px;
+}
+
+.aside_initial::first-letter {
+    color: #7f001b;
+}
+
+.aside_lists {
+    background-color: #ddd;
+    padding: 10px;
+    border-left: 10px solid #3e434f;
+    border-right: 10px solid #3e434f;
+    border-bottom: 18px solid #3e434f;
+}
+
+.aside_lists .husen_s {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px;
+    background-image: -webkit-linear-gradient(left, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    background-image: linear-gradient(to right, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    border-left: solid 30px #4cbd00;
+    text-align: center;
+}
+
+.aside_lists .husen_s:hover {
+    border-left: solid 20px #4cbd00;
+    transition: border-left 1.3s;
+}
+
+.aside_lists li:hover .aside_item{
+    font-weight: bold;
+    transition: font-weight 0.3s;
+}
+
+.aside_item {
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.clip_over_background {
+    height: 20px;
+    background-color: #3e434f;
+    border-left: 10px solid #3e434f;
+    border-right: 10px solid #3e434f;
+}
+
+.clip_over {
+    margin: auto;
+    width: 60%;
+    height: 20px;
+    background-image: -webkit-linear-gradient(top, #444 0%, #ddd 20%, #666 60%, #ddd 100%);
+    background-image: linear-gradient(to bottom, #444 0%, #ddd 20%, #666 60%, #ddd 100%);
+}
+
+.clip_under_background {
+    height: 20px;
+    background-color: #ddd;
+    border-left: 10px solid #3e434f;
+    border-right: 10px solid #3e434f;
+}
+
+.clip_under {
+    margin: auto;
+    width: 60%;
+    height: 20px;
+    background-image: -webkit-linear-gradient(top, #ddd 0%, #ddd 20%, #666 60%, #333 100%);
+    background-image: linear-gradient(to bottom, #ddd 0%, #ddd 20%, #666 60%, #333 100%);
+}

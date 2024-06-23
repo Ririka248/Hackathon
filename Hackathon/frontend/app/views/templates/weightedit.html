@@ -1,0 +1,13 @@
+{{define "content"}}
+{{.Weightvalue}}
+
+<form role="form" action="/mypage/weightupdate/{{.ID}}" method="post">
+    <div class="lead">Update</div>
+    <div class="form-group">
+      <textarea class="form-control" name="value" id="value" placeholder="更新" rows="4">{{.Heightvalue}}</textarea>
+      <br/>
+      <br/>
+      <button class="btn btn-lg btn-primary pull-right" type="submit">更新</button>
+    </div>
+  </form>
+{{end}}

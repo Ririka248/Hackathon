@@ -1,5 +1,53 @@
 {{ define "navbar" }}
-<div class="container">
-    <a href="/logout">logout</a>
-</div>
+<header id="header">
+    <link rel="stylesheet" href="/static/css/header.css">
+<link rel="stylesheet" href="/static/css/position.css">
+<link rel="stylesheet" href="/static/css/main.css">
+<link rel="stylesheet" href="/static/css/aside.css">
+<!--CSSのファイルをhrefに指定（相対パス）-->
+    <div class="header_background">
+        <a href="index.html#header_title" class="header_title">健康管理アプリケーション</a>
+    </div>
+    <div class="menu">
+        <div class="header_details">
+            <div class="header_summary">
+                <div class="summary_background"><a class="summary_name" href="#">スコア関係</a></div>
+                    <div class="summary_lists">
+                        <li><a href="/mypage/explanation">スコアとは</a></li>
+                        <li><a href="/mypage/explanation">計算方式</a></li>
+                        <li><a href="/mypage/explanation">アイテムの獲得</a></li>
+                    </div>
+            </div>
+        </div>
+        <div class="header_details">
+            <div class="header_summary">
+                <div class="summary_background"><a class="summary_name" href="#">睡眠・運動の説明</a></div>
+                    <div class="summary_lists">
+                        <li><a href="/mypage/explanation">睡眠内容の説明</a></li>
+                        <li><a href="/mypage/explanation">運動内容の説明</a></li>
+                    </div>
+            </div>
+        </div>
+        <div class="header_details">
+            <div class="header_summary">
+                <div class="summary_background"><a class="summary_name" href="#">冒険関係</a></div>
+                    <div class="summary_lists">
+                        <li><a href="/mypage/explanation">冒険へ向かう</a></li>
+                        <li><a href="/mypage/explanation">アイテムの説明</a></li>
+                    </div>
+            </div>
+        </div>
+        <div class="header_details">
+            <div class="header_summary">
+                <div class="summary_background"><a class="summary_name" href="#">こだわり</a></div>
+                    <div class="summary_lists">
+                        <li><a href="/mypage/explanation">フロントエンド</a></li>
+                        <li><a href="/mypage/explanation">バックエンド</a></li>
+                        <li><a href="/mypage/explanation">ゲーム開発</a></li>
+                    </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 {{end}}

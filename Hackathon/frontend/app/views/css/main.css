@@ -1,0 +1,131 @@
+#main {
+    margin-bottom: 30px;
+}
+
+.main_details {
+    display: flex;
+}
+
+.main_details_left {
+    width: 49%;
+    padding-right: 1%;
+}
+
+.main_details_right {
+    width: 49%;
+    padding-left: 1%;
+}
+
+.contents {
+    background: #fff2d5;
+    border-radius: 30px;
+}
+
+.contents_departure {
+    background: #fff2d5;
+    border-radius: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+
+.husen_m {
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #000;/*文字色*/
+    background-image: -webkit-linear-gradient(left, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    background-image: linear-gradient(to right, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    border-left: solid 60px #4cbd00;
+}
+
+.husen_m::first-letter {
+    color: #7f001b;
+}
+
+.topics {
+    padding: 0.25em 0.5em;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.value {
+    padding: 0.25em 0.5em;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.goto_quest {
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1em 1em;
+    text-align: center;
+    background-image: -webkit-linear-gradient(left, #aa00ad 0%, #fb00ff 50%, #c600c9 100%);
+    background-image: linear-gradient(to right, #aa00ad 0%, #fb00ff 50%, #c600c9 100%);
+    border-left: solid 40px #8d0090;
+}
+
+.que {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #000;/*文字色*/
+}
+
+.goto_quest:hover {
+    border-left: solid 25px #8d0090;
+    transition: border-left 1.3s;
+    font-weight: bold;
+}
+
+
+
+
+
+
+.mid_title {
+    padding: 0.25em 0.5em;/*上下 左右の余白*/
+    margin-top: 40px;
+    font-size: 30px;
+    font-family: 700;
+}
+
+
+.mid_title_underline {
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 6px solid #7f001b;
+    transform: scale(0, 1); /* 下線を横方向に0倍、縦方向に1倍に変形（非表示） */
+    transform-origin: left top; /* 変形の原点を左上に指定 */
+    transition: transform 1.5s; /* 変形をアニメーション化 */
+}
+
+
+.mid_title_underline::before {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 20%;
+    border-bottom: 6px solid #da002f;
+    content: '';
+}
+
+.mid_title.js-active > .mid_title_underline{
+    transform: scale(1, 1);
+}
+
+.mini_title {
+    padding: 0.10em 0.5em;/*上下 左右の余白*/
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: bold;
+    border-left: solid 5px #7f001b;/*左線*/
+}

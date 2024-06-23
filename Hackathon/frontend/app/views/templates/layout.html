@@ -1,21 +1,39 @@
 {{define "layout"}}
 <!DOCTYPE html>
-<html lang="en">
+<!--文書タイプ, おまじない-->
+
+<html lang="ja">
+<!--ホームページの言語-->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SampleApp</title>
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/form.css">
+ <!--headタグ開始-->
+
+ <meta charset="utf-8">
+ <!--文字コード-->
+
+ <title>健康管理アプリケーション</title>
+ <!--webサイトタイトル-->
+
+ <meta name="description" content="健康管理アプリケーション">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!--ディスクリプション（サイトの概要）-->
+
+
+
+<!-- [if lt IE 9] -->
+<script src="/static/js/html5shiv.js"></script>
+<script src="/static/js/css3-mediaqueries.js"></script>
+<!-- [endif] -->
+
+
 </head>
+<!--headタグ終了-->
 <body>
     {{template "navbar"}}
-    <div class="container text-center">
+     <!----- header----->
+     <div class="container text-center">
         {{template "content" . }}
     </div>
-    
 </body>
-<script src="/static/js/jquery-3.5.1.min.js"></script>
-<script src="/static/js/bootstrap.bundle.min.js"></script>
 </html>
 {{end}}

@@ -159,3 +159,25 @@ func GetFood() (foodPFC FoodPFC, err error) {
 		&foodPFC.Carbohydrate)
 	return foodPFC, err
 }
+
+func GetSports() (sports []Sports, err error) {
+	cmd := `select id, mets, sports_name from sports`
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	for rows.Next() {
+		var sport Sports
+		err = rows.Scan(
+			&sport.ID,
+			&sport.Mets,
+			&sport.Name)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		sports = append(sports, sport)
+	}
+	rows.Close()
+
+	return sports, err
+}

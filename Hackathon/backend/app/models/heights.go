@@ -6,11 +6,12 @@ import (
 )
 
 type Height struct {
-	ID          int
-	Heightvalue float64
-	UserID      int
-	Date        time.Time
-	CreatedAt   time.Time
+	ID             int
+	Heightvalue    float64
+	NowHeightValue float64
+	UserID         int
+	Date           time.Time
+	CreatedAt      time.Time
 }
 
 func (u *User) CreateHeight(heightvalue float64, date time.Time) (err error) {

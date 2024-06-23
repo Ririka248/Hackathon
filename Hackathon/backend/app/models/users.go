@@ -16,6 +16,9 @@ type User struct {
 	Item3     int
 	CreatedAt time.Time
 	Heights   []Height
+	Weights   []Weight
+	FoodPFCs  []FoodPFC
+	Sports    []Sports
 }
 
 type Session struct {
@@ -164,12 +167,15 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 
 func (sess *Session) GetUserBySession() (user User, err error) {
 	user = User{}
-	cmd := `select id, uuid, name, created_at FROM users
+	cmd := `select id, uuid, name, item1, item2, item3, created_at FROM users
 	where id = ?`
 	err = Db.QueryRow(cmd, sess.UserID).Scan(
 		&user.ID,
 		&user.UUID,
 		&user.Name,
+		&user.Item1,
+		&user.Item2,
+		&user.Item3,
 		&user.CreatedAt)
 
 	return user, err

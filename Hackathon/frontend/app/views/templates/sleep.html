@@ -1,81 +1,98 @@
 {{define "content" }}
-
 <div class="position">
     <!----- main -----> 
     <article id="main">
         <div class="today_score">
-            <div class="title husen_m">本日のスコア</div>
+            <div class="title husen_m">本日の睡眠</div>
             <div class="contents">
                 <div class="topics">総睡眠時間</div>
                 <div class="value">
-                    <div id="sleep_all_score">7時間30分</div>
+                    <div id="sleep_all">7時間30分</div>
                 </div>
-                <div class="topics">総消費カロリー</div>
+                <div class="topics">就寝時間</div>
                 <div class="value">
-                    <div class="burncal_all">300 kcal</div>
+                    <div id="sleep_start">23:30</div>
                 </div>
-                <div class="topics">スコア</div>
+                <div class="topics">起床時間</div>
                 <div class="value">
-                    <div class="score">60 点</div>
+                    <div id="sleep_end">7:00</div>
                 </div>
-                <div class="topics">評価</div>
+                <div class="topics">二度寝</div>
                 <div class="value">
-                    <div class="comment">脂質の量が多いです。間食などを控えてみましょう。</div>
+                    <div id="sleep_again">なし</div>
                 </div>
+            </div>
+        </div>
+        <div class="today_score">
+            <div class="title husen_m">睡眠内容の記入</div>
+            <div class="contents">
+                <div class="topics">就寝時間</div>
+                <div class="value">
+                    <input type="number" id="sleep_start_h" value="">
+                    <span>:<span>
+                    <input type="number" id="sleep_start_m" value="">
+                </div>
+                <div class="topics">起床時間</div>
+                <div class="value">
+                    <input type="number" id="sleep_end_h" value="">
+                    <span>:<span>
+                    <input type="number" id="sleep_end_m" value="">
+                </div>
+                <div class="topics">二度寝</div>
+                <div class="value">
+                    <input type="number" id="sleep_again_h" value="">
+                    <span>時間<span>
+                    <input type="number" id="sleep_again_m" value="">
+                    <span>分<span>
+                </div>
+                <input id="button1" type="button" value="記入内容を確定" onclick="sleep_calculate()">
             </div>
         </div>
         <div class="main_details">
             <div class="main_details_left">
-                <div class="title husen_m">本日の睡眠</div>
+                <div class="title husen_m">昨日の睡眠</div>
                 <div class="contents">
                     <div class="topics">総睡眠時間</div>
                     <div class="value">
-                        <div id="sleep_all">7時間30分</div>
+                        <div id="sleep_all_yd">6時間30分</div>
                     </div>
                     <div class="topics">就寝時間</div>
                     <div class="value">
-                        <div id="sleep_start">23:30</div>
+                        <div id="sleep_start_yd">0:00</div>
                     </div>
                     <div class="topics">起床時間</div>
                     <div class="value">
-                        <div id="sleep_end">7:00</div>
+                        <div id="sleep_end_yd">6:30</div>
                     </div>
                     <div class="topics">二度寝</div>
                     <div class="value">
-                        <div id="sleep_again">なし</div>
+                        <div id="sleep_again_yd">なし</div>
                     </div>
                 </div>
             </div>
             <div class="main_details_right">
-                <div class="title husen_m">本日の運動</div>
+                <div class="title husen_m">獲得可能アイテム</div>
                 <div class="contents">
-                    <div class="topics">総消費カロリー</div>
+                    <div class="topics">鉱石</div>
                     <div class="value">
-                        <div class="burncal_all">300 kcal</div>
+                        <div class="item_details">武器強化に利用可能</div>
                     </div>
-                    <div class="topics">種目1</div>
+                    <div class="topics">剣</div>
                     <div class="value">
-                        <div class="training_menu">ウォーキング</div>
-                        <div class="burncal">100 kcal</div>
+                        <div class="item_details">相手に5ダメージ</div>
                     </div>
-                    <div class="topics">種目2</div>
+                    <div class="topics">薬草</div>
                     <div class="value">
-                        <div class="training_menu">スクワット</div>
-                        <div class="burncal">200 kcal</div>
+                        <div class="item_details">体力を20回復</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="departure">
-            <div class="title husen_m">冒険はこちら</div>
-            <div class="contents_departure">
-                <div class="goto_quest"><a href="/mypage/game" class="que">冒険に出かける</a></div>
-            </div>
-        </div>
     </article>
     <!----- /main ----->
-     <!----- aside ----->
-     <aside id="aside">
+
+    <!----- aside ----->
+    <aside id="aside">
         <div class="aside_topic">
             <div class="aside_title"><div class="aside_initial">M E N U</div></div>
             <div class="clip_over_background"><div class="clip_over"></div></div>
@@ -93,5 +110,4 @@
     </aside>
 <!----- /aside ----->
 </div>
-
 {{end}}

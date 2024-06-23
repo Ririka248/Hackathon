@@ -17,12 +17,16 @@ var Db *sql.DB
 var err error
 
 const (
-	tableNameUser    = "users"
-	tableNameHeight  = "heights"
-	tableNameWeight  = "weights"
-	tableNameSession = "sessions"
-	tableNameFood    = "foods"
-	tableNameSports  = "sports"
+	tableNameUser      = "users"
+	tableNameHeight    = "heights"
+	tableNameWeight    = "weights"
+	tableNameSession   = "sessions"
+	tableNameFood      = "foods"
+	tableNameSports    = "sports"
+	tableNameCalendar  = "calendar"
+	tableNameSCalendar = "scalendar"
+	tableNameFCalendar = "fcalebdar"
+	tableNameECalendar = "ecalebdar"
 )
 
 func init() {
@@ -87,6 +91,47 @@ func init() {
 		sports_name STRING)`, tableNameSports)
 
 	Db.Exec(cmdM)
+
+	cmdC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER,
+		content STRING,
+		healthscore INTEGER,
+		date DATETIME,
+		created_at DATETIME)`, tableNameCalendar)
+
+	Db.Exec(cmdC)
+
+	cmdSC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER,
+		sleeping_hours INTEGER,
+		sleeping_minutes INTEGER,
+		date DATETIME,
+		created_at DATETIME)`, tableNameSCalendar)
+
+	Db.Exec(cmdSC)
+
+	cmdFC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER,
+		date DATETIME,
+		food_name STRING,
+		food_amount INTEGER,
+		created_at DATETIME)`, tableNameFCalendar)
+
+	Db.Exec(cmdFC)
+
+	cmdEC := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER,
+		date DATETIME,
+		exercise_name STRING,
+		exercise_hours TIME,
+		created_at DATETIME)`, tableNameECalendar)
+
+	Db.Exec(cmdEC)
+
 }
 
 func createUUID() (uuidobj uuid.UUID) {

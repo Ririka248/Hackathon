@@ -1,0 +1,33 @@
+body {
+    background-image: -webkit-linear-gradient(left, #ad5f34 0%, #6d3912 50%, #c57751 100%);
+    background-image: linear-gradient(to right, #ad5f34 0%, #6d3912 50%, #c57751 100%);
+}
+
+#header {
+    position: relative;
+    z-index: 2;
+}
+
+.position{
+    display: flex;
+    position:relative;
+    z-index: 1;
+}
+
+.position #main {
+    margin-left: 1.5%;
+    margin-right: auto;
+    width: 75%;
+}
+
+.position #aside {
+    width: 20%;
+    margin-right: 1.5%;
+}
+
+.aside_topic {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+
+}

@@ -31,7 +31,7 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 	return sess, err
 }
 
-var validPath = regexp.MustCompile("^/mypage/(edit|update|delete)/([0-9]+)$")
+var validPath = regexp.MustCompile("^/mypage/(heightedit|heightupdate|heightdelete|weightedit|weightupdate|weightdelete)/([0-9]+)$")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -59,10 +59,24 @@ func StartMainServer() error {
 	http.HandleFunc("/authenticate", authenticate)
 	http.HandleFunc("/logout", logout)
 	http.HandleFunc("/mypage", index)
-	http.HandleFunc("/mypage/new", heightNew)
-	http.HandleFunc("/mypage/save", heightSave)
-	http.HandleFunc("/mypage/edit/", parseURL(edit))
-	http.HandleFunc("/mypage/update/", parseURL(update))
-	http.HandleFunc("/mypage/delete/", parseURL(delete))
+	http.HandleFunc("/mypage/eat", eat)
+	http.HandleFunc("/mypage/sleep", sleep)
+	http.HandleFunc("/mypage/training", train)
+	http.HandleFunc("/mypage/explanation", privateexplanation)
+	http.HandleFunc("/mypage/setting", setting)
+	http.HandleFunc("/mypage/heightnew", heightNew)
+	http.HandleFunc("/mypage/heightsave", heightSave)
+	http.HandleFunc("/mypage/heightedit/", parseURL(heightedit))
+	http.HandleFunc("/mypage/heightupdate/", parseURL(heightupdate))
+	http.HandleFunc("/mypage/heightdelete/", parseURL(heightdelete))
+	http.HandleFunc("/mypage/weightnew", weightNew)
+	http.HandleFunc("/mypage/weightsave", weightSave)
+	http.HandleFunc("/mypage/weightedit/", parseURL(weightedit))
+	http.HandleFunc("/mypage/weightupdate/", parseURL(weightupdate))
+	http.HandleFunc("/mypage/weightdelete/", parseURL(weightdelete))
+	http.HandleFunc("/explanation", publicexplanation)
+	http.HandleFunc("/mypage/game", game)
+	http.HandleFunc("/mypage/calendar", calendar)
+	http.HandleFunc("/mypage/item", itemcheck)
 	return http.ListenAndServe(":"+config.Config.Port, nil)
 }

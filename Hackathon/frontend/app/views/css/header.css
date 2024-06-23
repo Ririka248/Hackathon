@@ -1,0 +1,91 @@
+.header_background{
+    background-image: -webkit-linear-gradient(left, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    background-image: linear-gradient(to right, #5ade00 0%, #80ff2a 50%, #67ff00 100%);
+    border-left: solid 70px #4cbd00;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.header_title{
+    color: #000;
+    text-decoration: none;
+    font-size: 40px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.header_details {
+    text-align: center;
+    height: 40px;
+    width: 25%;
+    line-height: 40px;
+    margin-bottom: 50px;
+}
+
+.summary_background:hover{
+    background-color: #ac0025;
+    transition: background-color 0.5s;
+    display: block;
+}
+
+.header_summary:hover .summary_lists{
+    transform: scaleY(1); /* ドロップダウンメニューの表示 */
+}
+
+/**********メニュー欄の仕様**********/
+.header_summary {
+    display: block;
+    list-style: none;
+    color: #000;
+    font-size: 25px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.summary_background {
+    background-color: #3e434f;
+}
+
+.summary_name {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.header_summary {
+    cursor: pointer;
+}
+
+.summary_lists{
+    background-color: #333;
+    opacity: 0.8;
+    transform: scaleY(0); /* ドロップダウンメニューの非表示 */
+    transform-origin: center top; /* 変形を適応する基準を設定 */
+    transition: transform 0.3s; /* 表示の変化をアニメーション化 */
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+}
+
+.summary_lists li{
+    display: block;
+    list-style: none;
+}
+
+.summary_lists li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+.summary_lists li:hover {
+    background-color: #c5002a;
+    font-weight: bold;
+}
